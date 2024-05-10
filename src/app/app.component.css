@@ -1,0 +1,67 @@
+
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,117,121,1) 100%);
+  }
+  .h4{
+    color: #ffffff;
+  }
+
+  .card {
+    margin-bottom: 20px;
+    width: 100%; 
+    font-family: "Segoe UI";
+  }
+  
+  .card-header {
+    background-color: rgba(0,212,255,1);
+    padding: 10px;
+  }
+  
+  .card-body {
+    background-color: rgba(0,212,255,1);
+    padding: 10px;
+    border: #030303;
+  }
+  .card-footer .col-6:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content;
+  }
+  .card-footer .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-footer {
+    background-color: #fffdfd;
+    padding: 10px;
+  }
+  .modal-content {
+    border-radius: 10px;
+  }
+  
+  .modal-header {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(9,117,121,1) 100%);
+    color: #030303;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    border-radius: 0 0 10px 10px;
+    padding: 10px 20px;
+    background-color: #fffdfd;
+  }
+  

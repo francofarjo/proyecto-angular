@@ -1,0 +1,117 @@
+
+<div class="container">
+  <div class="row pt-3">
+    <div class="col-6">
+      <h4>Estudiantes registrados</h4>
+    </div>
+    <div class="col-6 text-end">
+      <button class="btn btn-primary" style="background:#080808;" (click)="openModel()">Agregar Estudiante</button>
+    </div>
+  </div>
+  <br><br>
+  @if (studentList.length !== 0) {
+  <div class="row">
+    @for (item of studentList; track $index) {
+    <div class="col-3">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-6">
+              {{item.name}}
+            </div>
+            <div class="col-6 text-end">
+              {{item.mobileNo}}
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p> {{item.city}} , {{item.state}} , {{item.pincode}}</p>
+          <p> {{item.address}}</p>
+          <p> {{item.email}}</p>
+        </div>
+        <div class="card-footer text-center">
+          <div class="row">
+            <div class="col-6">
+              
+            </div>
+            <br><br>
+            <div class="col-6">
+              <button class="btn btn-sm btn-primary" (click)="onEdit(item)">Editar</button>
+              <br><br>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(item)">Elimnar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  } @else { 
+    <div class="row">
+      <div class="col-12 p-4 text-center">
+        <p>No hay Estudiantes. Crer Nuevo Estudiante</p>
+      </div>
+    </div>
+  }
+
+</div>
+
+
+<div class="modal" id="myModal" #myModal>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Crear Estudiante</h4>
+        <button type="button" class="btn-close" (click)="closeModel()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-8">
+            <label for="">Nombre</label>
+            <input type="text" [(ngModel)]="studentObj.name" class="form-control" placeholder="Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="">Nro.Telefono</label>
+            <input type="text" [(ngModel)]="studentObj.mobileNo" class="form-control" placeholder="Mobile">
+          </div>
+          <div class="col-6">
+            <label for="">Email</label>
+            <input type="text" [(ngModel)]="studentObj.email" class="form-control" placeholder="Email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="">Ciudad</label>
+            <input type="text" [(ngModel)]="studentObj.city" class="form-control" placeholder="City">
+          </div>
+          <div class="col-4">
+            <label for="">Provincia</label>
+            <input type="text" [(ngModel)]="studentObj.state" class="form-control" placeholder="State">
+          </div>
+          <div class="col-4">
+            <label for="">Cod.Postal</label>
+            <input type="text" [(ngModel)]="studentObj.pincode" class="form-control" placeholder="Pin Code">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <label for="">Direccion</label>
+            <textarea rows="3" [(ngModel)]="studentObj.address" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closeModel()">Cerrar</button>
+        @if (studentObj.id ==0) {
+          <button type="button" class="btn btn-primary" (click)="saveStudent()">Guardar Estudiante</button>
+        } @else {
+          <button type="button" class="btn btn-primary" (click)="updateStud()">Actualizar Estudiante</button>
+        }
+       
+      </div>
+    </div>
+  </div>
+</div>
